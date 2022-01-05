@@ -1,0 +1,34 @@
+Ugly numbers are numbers whose only prime factors are 2, 3 or 5. The sequence 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, … shows the first 11 ugly numbers. By convention, 1 is included. Write a program to find Nth Ugly Number.
+
+Example 1:
+
+Input:
+N = 10
+Output: 12
+Explanation: 10th ugly number is 12.
+Example 2:
+
+Input:
+N = 4
+Output: 4
+Explanation: 4th ugly number is 4.
+
+solution::
+
+ull getNthUglyNo(int n) {
+	    // code here
+	    set<ull> q;
+	    q.insert(1);
+	    n--;
+	    while(n--){
+	        auto x=q.begin();
+	        ull it=*x;
+	        q.erase(x);
+	        q.insert(it*2);
+	        q.insert(it*3);
+	        q.insert(it*5);
+	        
+	    }
+	    
+	   return *q.begin();
+	}
