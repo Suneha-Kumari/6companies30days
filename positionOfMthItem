@@ -1,0 +1,31 @@
+M items are to be delivered in a circle of size N. Find the position where the M-th item will be delivered if we start from a given position K. Note that items are distributed at adjacent positions starting from K.
+
+ 
+
+Example 1:
+
+Input:
+N = 5, M = 2, K = 1
+Output:
+2
+Explanation:
+If we start from 1st position, the
+2nd item will land at the 2nd position.
+Example 2:
+
+Input:
+N = 5, M = 8, K = 2
+Output:
+4
+Explanation:
+If we start from 2nd position, the
+8th item will land at the 4th position.
+
+solution:
+int findPosition(int N , int M , int K) {
+        // code here
+     if(N==1)
+     return 1;
+     return ((M+K-1)%N==0?N:(M+K-1)%N);
+    }
+    
